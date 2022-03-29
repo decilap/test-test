@@ -15,5 +15,5 @@ app.use('/api/products', productController);
 app.get('/*', function(req,res) {
     res.sendFile("index.html", {root: 'dist/deploy-test'});
 });
-app.listen(process.env.PORT || 8080);
+app.listen(process.env.PORT || 3001);
 
