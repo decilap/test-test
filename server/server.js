@@ -12,8 +12,6 @@ app.use(express.static('./dist/deploy-test'));
 app.use('/api/products', productController);
 
 
-
-
 app.get('/*', function(req,res) {
     res.sendFile("index.html", {root: 'dist/deploy-test'});
 });
