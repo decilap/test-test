@@ -72,7 +72,7 @@ jobs:
     #     rsync -avz ./server ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/azureuser/www/
     #     pm2 start ./server/server.js
   deploy:
-    needs: [test]
+    #needs: [test]
     runs-on: ubuntu-latest
 
     steps:
