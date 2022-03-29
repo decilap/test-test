@@ -86,6 +86,7 @@ jobs:
         port: ${{ secrets.SSH_PORT }}
         script: |
           ls
-          git pull origin master
+          node --version
+         # git pull origin master
          # npm install --production
          # pm2 restart node-app
