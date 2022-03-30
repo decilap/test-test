@@ -53,20 +53,20 @@ jobs:
   #   runs-on: ubuntu-latest
 
   #   steps:
-    - name: Install SSH Key
-      uses: shimataro/ssh-key-action@v2
-      with:
-        key: ${{ secrets.SSHKEY }} 
-        known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
+    # - name: Install SSH Key
+    #   uses: shimataro/ssh-key-action@v2
+    #   with:
+    #     key: ${{ secrets.SSHKEY }} 
+    #     known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
 
-    - name: Adding Known Hosts
-      run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+    # - name: Adding Known Hosts
+    #   run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
-    - name: Copy dist with rsync
-      run: | 
-        rsync -avz ./dist/deploy-test ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/azureuser/www/
+    # - name: Copy dist with rsync
+    #   run: | 
+    #     rsync -avz ./dist/deploy-test ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/azureuser/www/
   deploy:
-    needs: [build]
+    #needs: [build]
     runs-on: ubuntu-latest
 
     steps:
