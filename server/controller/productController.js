@@ -5,7 +5,6 @@ const fs = require('fs');
 const HTTP_STATUS_CODE_NOT_FOUND = 404;
 
 //const basePathToData = path.join(__dirname, './server');
-
 const getJsonData = function (basePathToData, filename) {
   var filename = path.join(basePathToData, filename);
   return JSON.parse(fs.readFileSync(filename, 'utf-8'));
@@ -16,36 +15,6 @@ router.get('/', function (request, response) {
   setTimeout(function() {
     return response.send(data.list_products);
   }, 100);
-});
-
-
-router.get('/filter', function(request, response){
-
-  let products = [
-    { name: 'test 2', cat : 'one' },
-    { name: 'test 2', cat : 'three' },
-    { name: 'test 1', cat : 'two' }
-  ];
-
-  let post = {
-    avisNumber: 0,
-    stringSearch: '',
-    arayCategory: [],
-  }
-
-
-
-
-  
-  if(post.name !=  ''){
-    this.products =  products.filter(p => p.name == post.name)
-  } 
-  
-  if(post.cat != ''){
-    this.products =  products.filter(p => p.cat == post.cat)
-  }
-  
-  console.log(this.products)
 });
 
 router.get('/:id', function (request, response) {
